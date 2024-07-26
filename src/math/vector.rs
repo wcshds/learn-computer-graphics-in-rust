@@ -89,6 +89,7 @@ impl Vector {
 
     /// Get the orthonormal basis from current vector. The vector itself
     /// should be a unit vector.
+    #[inline]
     pub fn orthonormal_basis_revised_from_unit(&self) -> (Self, Self) {
         let sign = 1.0f32.copysign(self.z);
         let a = -1.0 / (sign + self.z);
@@ -102,6 +103,7 @@ impl Vector {
     /// Get the orthonormal basis from current vector. This function will
     /// automatically normalize this vector to a unit vector, then invoke
     /// `orthonormal_basis_frisvad_from_unit` function.
+    #[inline]
     pub fn orthonormal_basis_revised(&self) -> Option<(Self, Self)> {
         let w_len = self.length();
         if w_len == 0.0 {

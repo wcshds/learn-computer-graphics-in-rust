@@ -1,6 +1,7 @@
 mod matrix;
 mod vector;
 pub mod utils;
+pub mod rand;
 
 pub use matrix::*;
 pub use vector::*;
